@@ -6,7 +6,46 @@
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
-  <body>
+  <body class="container">
+    <header class="title_container">
+      <h1 class="title">Expense Tracking App</h1>
+    </header>
+    <div class="form_container">
+      <form class="form">
+        <div class="name">
+          <label for="">Name</label>
+          <input type="text" />
+        </div>
+        <div class="category">
+          <label for="">Category</label>
+          <input type="text" />
+        </div>
+        <div class="price">
+          <label for="">Price</label>
+          <input type="text" />
+        </div>
+        <div class="select_container">
+          <select
+            style="
+              padding: 10px 20px;
+              cursor: pointer;
+              background-color: transparent;
+            "
+            name=""
+            id=""
+          >
+            <option value="11 Jan">11 JAN</option>
+            <option value="12 JAN">12 JAN</option>
+            <option value="13 JAN">13 JAN</option>
+            <option value="14 JAN">14 JAN</option>
+            <option value="15 JAN">15 JAN</option>
+          </select>
+        </div>
+        <div class="btn_container">
+          <button id="" type="submit" class="btn">Order Now</button>
+        </div>
+      </form>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

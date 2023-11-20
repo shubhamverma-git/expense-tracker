@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: black;
+}
+.container {
+  background-color: rgb(202, 169, 215);
+}
+
+.title_container {
+  margin-top: 20px;
+}
+
+.title {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+
+  /* disable text selection */
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.form_container {
+  margin-top: 40px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.name > input {
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid white;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.category > input {
+  background-color: transparent;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid white;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.price > input {
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid white;
+}
+
+.select_container {
+  /* display: flex;
+  justify-content: center; */
+}
+
+.btn_container {
+  margin-top: 100px;
+}
+.btn {
+  background-color: rgb(49, 41, 29);
+  cursor: pointer;
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+  border: none;
+  &:hover {
+    background-color: rgb(71, 133, 145);
+  }
+}

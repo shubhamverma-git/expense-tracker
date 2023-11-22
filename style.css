@@ -63,6 +63,19 @@
   border: 1px solid white;
 }
 
+.pin_code {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.pin_code > input {
+  background-color: transparent;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid white;
+}
+
 .price {
   display: flex;
   flex-direction: column;
@@ -84,6 +97,7 @@
 .btn_container {
   margin-top: 100px;
 }
+
 .btn {
   background-color: rgb(49, 41, 29);
   cursor: pointer;
@@ -94,4 +108,18 @@
   &:hover {
     background-color: rgb(71, 133, 145);
   }
+}
+
+.order_detail {
+  margin-top: 60px;
+}
+
+.order_detail h1 {
+  text-align: center;
+}
+
+.list_container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: nowrap;
 }

@@ -1,12 +1,11 @@
-const userForm = document.getElementById("myForm");
 const userName = document.getElementById("formName");
 const proCat = document.getElementById("productCategory");
 const dlvryPin = document.getElementById("pinCode");
 const proCost = document.getElementById("productPrice");
 const dlvryDate = document.getElementById("productDd");
-const formButton = document.getElementById("formBtn");
+const submitButton = document.getElementById("formBtn");
 
-formButton.addEventListener("click", formSubmit);
+submitButton.addEventListener("click", formSubmit);
 
 async function formSubmit(e) {
   e.preventDefault();

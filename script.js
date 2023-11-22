@@ -20,7 +20,13 @@ async function formSubmit(e) {
 
   const responseData = await sendData(data);
 
-  if (responseData.name && responseData.cat) {
+  if (
+    responseData.name &&
+    responseData.cat &&
+    responseData.pin &&
+    responseData.cost &&
+    responseData.date
+  ) {
     uiCreator(responseData);
     userName.value = "";
     proCat.value = "";

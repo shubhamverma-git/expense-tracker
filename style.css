@@ -76,6 +76,30 @@
   border: 1px solid white;
 }
 
+.phone_field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.number_container {
+  display: flex;
+}
+
+.select_code {
+  padding: 10px;
+  border-right: none;
+  border: 1px solid white;
+  background-color: transparent;
+}
+
+.number input {
+  background-color: transparent;
+  border: 1px solid white;
+  border-left: none;
+  padding: 10px;
+}
+
 .price {
   display: flex;
   flex-direction: column;

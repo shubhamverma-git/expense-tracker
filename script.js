@@ -1,6 +1,8 @@
 const userName = document.getElementById("formName");
 const proCat = document.getElementById("productCategory");
 const dlvryPin = document.getElementById("pinCode");
+const countryCode = document.getElementById("code");
+const phoneNo = document.getElementById("phone");
 const proCost = document.getElementById("productPrice");
 const dlvryDate = document.getElementById("productDd");
 const submitButton = document.getElementById("formBtn");
@@ -13,6 +15,8 @@ async function formSubmit(e) {
     name: userName.value,
     cat: proCat.value,
     pin: dlvryPin.value,
+    code: countryCode.value,
+    phone: phoneNo.value,
     cost: proCost.value,
     date: dlvryDate.value,
   };
@@ -25,12 +29,16 @@ async function formSubmit(e) {
     responseData.cat &&
     responseData.pin &&
     responseData.cost &&
+    responseData.code &&
+    responseData.phone &&
     responseData.date
   ) {
     uiCreator(responseData);
     userName.value = "";
     proCat.value = "";
     dlvryPin.value = "";
+    countryCode.value = "";
+    phoneNo.value = "";
     proCost.value = "";
     dlvryDate.value = "";
   } else {
@@ -67,6 +75,12 @@ function uiCreator(responseData) {
   const pin = document.createElement("h1");
   pin.innerHTML = responseData.pin;
 
+  const code = document.createElement("h1");
+  code.innerHTML = responseData.code;
+
+  const phone = document.createElement("h1");
+  phone.innerHTML = responseData.phone;
+
   const cost = document.createElement("h1");
   cost.innerHTML = responseData.cost;
 
@@ -77,6 +91,8 @@ function uiCreator(responseData) {
   card.appendChild(cat);
   card.appendChild(pin);
   card.appendChild(cost);
+  card.appendChild(code);
+  card.appendChild(phone);
   card.appendChild(date);
 
   const listContainer = document.getElementById("listContainer");

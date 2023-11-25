@@ -5,6 +5,11 @@
   font-family: sans-serif;
   color: black;
 }
+
+* input {
+  color: black;
+}
+
 .container {
   background-color: rgb(202, 169, 215);
 }
@@ -88,15 +93,20 @@
 
 .select_code {
   padding: 10px;
-  border-right: none;
+  border-right: none !important;
   border: 1px solid white;
   background-color: transparent;
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
-.number input {
+.number_input {
   background-color: transparent;
   border: 1px solid white;
+  border-radius: 0 5px 5px 0;
   border-left: none;
+  font-size: 14px;
   padding: 10px;
 }
 
@@ -113,9 +123,12 @@
   border: 1px solid white;
 }
 
-.select_container {
-  /* display: flex;
-  justify-content: center; */
+.select_data {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 
 .btn_container {

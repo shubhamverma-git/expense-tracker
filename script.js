@@ -1,53 +1,55 @@
-const userName = document.getElementById("formName");
-const proCat = document.getElementById("productCategory");
-const dlvryPin = document.getElementById("pinCode");
-const countryCode = document.getElementById("code");
-const phoneNo = document.getElementById("phone");
-const proCost = document.getElementById("productPrice");
-const dlvryDate = document.getElementById("productDd");
-const submitButton = document.getElementById("formBtn");
+const formUserName = document.getElementById("userName");
+const formProCat = document.getElementById("userProCat");
+const formDlvryPin = document.getElementById("userPinCode");
+const formCountryCode = document.getElementById("userCountryCode");
+const formPhoneNo = document.getElementById("userPhone");
+const formProCost = document.getElementById("userProductPrice");
+const formDlvryDate = document.getElementById("userProductDd");
+const formSubmitButton = document.getElementById("formBtn");
 
-submitButton.addEventListener("click", formSubmit);
+document.addEventListener("DOMContentLoaded", getAllData);
+
+formSubmitButton.addEventListener("click", formSubmit);
 
 async function formSubmit(e) {
   e.preventDefault();
   const data = {
-    name: userName.value,
-    cat: proCat.value,
-    pin: dlvryPin.value,
-    code: countryCode.value,
-    phone: phoneNo.value,
-    cost: proCost.value,
-    date: dlvryDate.value,
+    clientName: formUserName.value,
+    clientProCat: formProCat.value,
+    clientPinCode: formDlvryPin.value,
+    clientCountryCode: formCountryCode.value,
+    clientPhone: formPhoneNo.value,
+    clientProCost: formProCost.value,
+    clientDlvryDate: formDlvryDate.value,
   };
   console.log(data);
 
   const responseData = await sendData(data);
 
   if (
-    responseData.name &&
-    responseData.cat &&
-    responseData.pin &&
-    responseData.cost &&
-    responseData.code &&
-    responseData.phone &&
-    responseData.date
+    responseData.clientName &&
+    responseData.clientProCat &&
+    responseData.clientPinCode &&
+    responseData.clientCountryCode &&
+    responseData.clientPhone &&
+    responseData.clientProCost &&
+    responseData.clientDlvryDate
   ) {
     uiCreator(responseData);
-    userName.value = "";
-    proCat.value = "";
-    dlvryPin.value = "";
-    countryCode.value = "";
-    phoneNo.value = "";
-    proCost.value = "";
-    dlvryDate.value = "";
+    formUserName.value = "";
+    formProCat.value = "";
+    formDlvryPin.value = "";
+    formCountryCode.value = "";
+    formPhoneNo.value = "";
+    formProCost.value = "";
+    formDlvryDate.value = "";
   } else {
     alert("please fill the form");
   }
 }
 
 async function sendData(formData) {
-  const res = await fetch(
+  const response = await fetch(
     "https://crudcrud.com/api/50d7474d5fab4bbb91db81349a8fc1bc/listData",
     {
       method: "POST",
@@ -57,7 +59,7 @@ async function sendData(formData) {
       },
     }
   );
-  const data = await res.json();
+  const data = await response.json();
 
   return data;
 }
@@ -66,41 +68,41 @@ function uiCreator(responseData) {
   const card = document.createElement("div");
   card.classList.add("list");
 
-  const name = document.createElement("h1");
-  name.innerHTML = responseData.name;
+  const clientName = document.createElement("h1");
+  clientName.innerHTML = responseData.clientName;
 
-  const cat = document.createElement("h1");
-  cat.innerHTML = responseData.cat;
+  const clientProCat = document.createElement("h1");
+  clientProCat.innerHTML = responseData.clientProCat;
 
-  const pin = document.createElement("h1");
-  pin.innerHTML = responseData.pin;
+  const clientPinCode = document.createElement("h1");
+  clientPinCode.innerHTML = responseData.clientPinCode;
 
-  const code = document.createElement("h1");
-  code.innerHTML = responseData.code;
+  const clientCountryCode = document.createElement("h1");
+  clientCountryCode.innerHTML = responseData.clientCountryCode;
 
-  const phone = document.createElement("h1");
-  phone.innerHTML = responseData.phone;
+  const clientPhone = document.createElement("h1");
+  clientPhone.innerHTML = responseData.clientPhone;
 
-  const cost = document.createElement("h1");
-  cost.innerHTML = responseData.cost;
+  const clientProCost = document.createElement("h1");
+  clientProCost.innerHTML = responseData.clientProCost;
 
-  const date = document.createElement("h1");
-  date.innerHTML = responseData.date;
+  const clientDlvryDate = document.createElement("h1");
+  clientDlvryDate.innerHTML = responseData.clientDlvryDate;
 
-  card.appendChild(name);
-  card.appendChild(cat);
-  card.appendChild(pin);
-  card.appendChild(cost);
-  card.appendChild(code);
-  card.appendChild(phone);
-  card.appendChild(date);
+  card.appendChild(clientName);
+  card.appendChild(clientProCat);
+  card.appendChild(clientPinCode);
+  card.appendChild(clientProCost);
+  card.appendChild(clientPinCode);
+  card.appendChild(clientPhone);
+  card.appendChild(clientDlvryDate);
 
   const listContainer = document.getElementById("listContainer");
   listContainer.appendChild(card);
 }
 
 async function getAllData() {
-  const receivedData = fetch(
+  const receivedData = await fetch(
     "https://crudcrud.com/api/50d7474d5fab4bbb91db81349a8fc1bc/listData",
     {
       method: "GET",

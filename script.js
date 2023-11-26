@@ -50,7 +50,7 @@ async function formSubmit(e) {
 
 async function sendData(formData) {
   const response = await fetch(
-    "https://crudcrud.com/api/50d7474d5fab4bbb91db81349a8fc1bc/listData",
+    "https://crudcrud.com/api/a8627ace9fdd41b8a4a12575be596264/listData",
     {
       method: "POST",
       body: JSON.stringify(formData),
@@ -69,25 +69,25 @@ function uiCreator(responseData) {
   card.classList.add("list");
 
   const clientName = document.createElement("h1");
-  clientName.innerHTML = responseData.clientName;
+  clientName.innerHTML = responseData?.clientName;
 
   const clientProCat = document.createElement("h1");
-  clientProCat.innerHTML = responseData.clientProCat;
+  clientProCat.innerHTML = responseData?.clientProCat;
 
   const clientPinCode = document.createElement("h1");
-  clientPinCode.innerHTML = responseData.clientPinCode;
+  clientPinCode.innerHTML = responseData?.clientPinCode;
 
   const clientCountryCode = document.createElement("h1");
-  clientCountryCode.innerHTML = responseData.clientCountryCode;
+  clientCountryCode.innerHTML = responseData?.clientCountryCode;
 
   const clientPhone = document.createElement("h1");
-  clientPhone.innerHTML = responseData.clientPhone;
+  clientPhone.innerHTML = responseData?.clientPhone;
 
   const clientProCost = document.createElement("h1");
-  clientProCost.innerHTML = responseData.clientProCost;
+  clientProCost.innerHTML = responseData?.clientProCost;
 
   const clientDlvryDate = document.createElement("h1");
-  clientDlvryDate.innerHTML = responseData.clientDlvryDate;
+  clientDlvryDate.innerHTML = responseData?.clientDlvryDate;
 
   card.appendChild(clientName);
   card.appendChild(clientProCat);
@@ -103,7 +103,7 @@ function uiCreator(responseData) {
 
 async function getAllData() {
   const receivedData = await fetch(
-    "https://crudcrud.com/api/50d7474d5fab4bbb91db81349a8fc1bc/listData",
+    "https://crudcrud.com/api/a8627ace9fdd41b8a4a12575be596264/listData",
     {
       method: "GET",
     }
